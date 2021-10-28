@@ -1,0 +1,33 @@
+# this is python code in which we 
+# constructed 20 overlapping circles every
+# 5 consecutive circles have same color
+import turtle
+t = turtle.Turtle()
+# this is code for speed drawing
+t.speed(0) 
+
+# all colors in which we have to fill in circles 
+color = ['red','green','blue','pink']
+
+# 20 times loop run
+for i in range(0,20) : 
+  # we have to write code in t.begin_fill() and
+  # t.end_fill() because we have to fill color in circles
+  t.begin_fill()
+  
+  # draw 100 px radius circle
+  t.circle(100)
+  
+  # to fill color in circle
+  t.fillcolor(color[i//5])
+  
+  t.end_fill()
+  
+  # if we have to shift circle without printing any thing
+  # then we have to write code between t.up() and t.down() function
+  t.up()
+  
+  # in every times we shift circle in -ve y dircetion 
+  # like 15*1, 15*2, 15*3 ...
+  t.goto(0,-15*(i + 1))
+  t.down()
